@@ -1,3 +1,12 @@
+provider "google" {	
+  credentials = file(var.gcp_service_account)	
+  project     = var.gcp_project_id	
+  region      = var.gcp_region	
+  version     = "=2.20.1"	
+  # pinning to version 2.20.1 until this issue is resolved	
+  # https://github.com/terraform-providers/terraform-provider-google/issues/5107	
+}
+
 resource "random_string" "cluster_id" {
   length  = 5
   special = false
