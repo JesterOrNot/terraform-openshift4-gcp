@@ -38,7 +38,7 @@ EOF
 
   provisioner "local-exec" {
     when    = destroy
-    command = "rm -rf ${local.installer_workspace}"
+    command = "rm -rf ${path.root}/installer-files"
   }
 
 }
